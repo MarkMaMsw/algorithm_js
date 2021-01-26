@@ -44,9 +44,13 @@ class Sort {
 
     // 数组元素互换位置
     swap(arr, i, j) {
-        const temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        // const temp = arr[i];
+        // arr[i] = arr[j];
+        // arr[j] = temp;
+        // 异或运算可以用于调换变量的值，且不需要申请额外的变量
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
     }
 }
 
